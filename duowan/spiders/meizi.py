@@ -11,6 +11,7 @@ class MeiziSpider(scrapy.Spider):
     _url = 'http://tu.duowan.com/m/meinv?offset='
     offset = 330
     start_urls = [_url + str(offset)]
+    os.mkdir('img')
 
     def parse(self, response):
         url_list = response.xpath('//em/a/@href').extract()
